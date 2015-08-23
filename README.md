@@ -19,13 +19,46 @@ then assign roles to a list of hosts.
 
 (Ideally these roles would match chef or octopus deploy roles too)
 
+## Sample Specification
+
+The serverspec format is very familiar to anyone who has done BDD before.  It
+uses a format which can be easily read by less technical humans which is a
+huge selling point for me.
+
+```ruby
+require 'spec_helper'
+
+describe 'SQL Server 2014' do
+  describe service('SQL Server (MSSQLSERVER)') do
+    it { should be_installed }
+    it { should be_enabled }
+    it { should be_running }
+    it { should have_start_mode('Automatic') }
+  end
+
+  describe package('Microsoft SQL Server 2014 (64-bit)') do
+    it { should be_installed }
+  end
+
+  describe port(1433) do
+    it { should be_listening.with('tcp') }
+  end
+end
+```
+
 ## Sample Command
 
-```
+To execute the test you just run `rake` from the command line.  This is an
+example of what I would run on my Mac from the terminal, but it could equally
+be kicked off by running it from a command prompt or PowerShell prompt in
+Windows.
+
+```bash
 TARGET_HOST="10.0.1.3" TARGET_USER="packer" TARGET_PASS="topsecret123" rake
 ```
 
 ## Sample Output
+
 ```
 DevOps Tools
   Package "Chef Development Kit v0.6.2"
