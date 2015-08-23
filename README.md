@@ -109,3 +109,9 @@ Local User Configuration
 Finished in 26.07 seconds (files took 1.23 seconds to load)
 42 examples, 0 failures
 ```
+
+## Contributing
+
+See (Contributing)[CONTRIBUTING.md]
+
+By contributing, you agree to abide by the (Contributor Code of Conduct v1.2)[http://contributor-covenant.org/version/1/2/0/]
