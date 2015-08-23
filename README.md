@@ -1,9 +1,17 @@
-# environment-validator
-Development Environment Validator
+# Environment Validator
 
 This uses the server-spec framework to perform environment validation of
 development or test environments.  The initial version is set up in a very
 basic way where you pass a single host IP or Name and it connects over WinRM.
+
+This is specifically designed to be an example of how one might test long-lived
+environments without taking the leap into configuration management tools such
+as Chef or Puppet.  Although that would be the logical and ideal situation,
+there are times where it's not yet possible to take that step.
+
+The other area I wanted to demonstrate was the use of these tools to test in a
+Windows environment rather than the more commonly demonstrated Linux-based
+environments.
 
 I would like to enhance this to be more role based in the future so that rather
 than specifying a number of hosts and specs, you can define roles and specs and
@@ -112,6 +120,4 @@ Finished in 26.07 seconds (files took 1.23 seconds to load)
 
 ## Contributing
 
-See (Contributing)[CONTRIBUTING.md]
-
-By contributing, you agree to abide by the (Contributor Code of Conduct v1.2)[http://contributor-covenant.org/version/1/2/0/]
+See [Contributing](CONTRIBUTING.md)
